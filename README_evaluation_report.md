@@ -30,13 +30,11 @@
 
 ## 1. Executive Summary
 
-> **Fill this in LAST, after completing all scoring and analysis.**
-
 This report presents the results of a focused stress-test evaluation comparing six large language models — GPT 5.5, Claude Opus 4.7, Gemini Flash 3, Meta Muse Spark, DeepSeek V3, and Qwen 3.6 — on their ability to handle complex, bidirectional Indonesian–English code-switching tasks. Unlike broad general-purpose evaluations, this study deliberately targets one of the most underexplored and practically important dimensions of multilingual AI capability: the ability to reason, respond, and switch fluidly between Indonesian and English within a single conversation turn.
 
 The evaluation uses 10 high-difficulty prompts designed with layered complexity — each prompt simultaneously tests terminology precision, register maintenance, directional switching, and cultural coherence. All 10 prompts were submitted to all 6 models, yielding 60 scored responses.
 
-**Key finding:** [1–2 sentence summary. E.g.: "Claude Opus 4.7 demonstrated the most consistent bilingual reasoning across all 10 prompts, particularly on literary translation (CS-08) and meta-linguistic analysis (CS-09), while GPT 5.5 showed the strongest register control. All models exhibited some degree of language collapse on CS-06, where sustained Indonesian debate against English arguments proved the most challenging task."]
+**Key finding:** GPT 5.5 and Claude Opus 4.7 were effectively tied at the top, with composite averages of 4.99 and 4.96 and zero tracked failure modes across all 10 prompts. Gemini Flash 3 formed a stable middle tier at 4.02, while Qwen 3.6, DeepSeek V3, and Meta Muse Spark clustered lower and were separated mainly by register inconsistency, surface compliance, and language collapse patterns.
 
 ---
 
@@ -82,7 +80,7 @@ This is a **single-annotator human evaluation** using a structured rubric specif
 | Code-switching failure modes tracked | 3 |
 | Annotator | 1 (bilingual EN-ID, RLHF background) |
 | Evaluation platform | Mixed — GPT 5.5 via Outlier AI Playground; all others via native interfaces |
-| Scoring period | [May 3 2026] – [May 7 2026] |
+| Scoring period | May 3, 2026 – May 7, 2026 |
 | Prompt direction | Bidirectional — both ID→EN and EN→ID switching |
 | Prompt difficulty | High — all prompts carry multiple simultaneous difficulty layers |
 
@@ -206,29 +204,29 @@ The full prompts with annotator notes are available in [prompts.md](./prompts.md
 
 ## 6. Results — Overall Scores
 
-> **Replace all X.XX placeholders with your actual scores.**
+> Scores below are calculated from the weighted rubric across all 10 prompts.
 
 ### Composite Averages (All 10 Prompts)
 
 | Model | D1 Accuracy | D2 Instruction | D3 Language | D4 Helpfulness | D5 Format | **Composite** | Rank |
 |-------|-------------|----------------|-------------|----------------|-----------|---------------|------|
-| GPT 5.5 | X.XX | X.XX | X.XX | X.XX | X.XX | **X.XX** | # |
-| Claude Opus 4.7 | X.XX | X.XX | X.XX | X.XX | X.XX | **X.XX** | # |
-| Gemini Flash 3 | X.XX | X.XX | X.XX | X.XX | X.XX | **X.XX** | # |
-| Meta Muse Spark | X.XX | X.XX | X.XX | X.XX | X.XX | **X.XX** | # |
-| DeepSeek V3 | X.XX | X.XX | X.XX | X.XX | X.XX | **X.XX** | # |
-| Qwen 3.6 | X.XX | X.XX | X.XX | X.XX | X.XX | **X.XX** | # |
+| GPT 5.5 | 5.00 | 5.00 | 5.00 | 5.00 | 4.80 | **4.99** | 1 |
+| Claude Opus 4.7 | 5.00 | 4.90 | 5.00 | 4.90 | 5.00 | **4.96** | 2 |
+| Gemini Flash 3 | 4.10 | 4.00 | 4.00 | 4.00 | 4.00 | **4.02** | 3 |
+| Qwen 3.6 | 3.60 | 3.30 | 3.40 | 3.20 | 3.40 | **3.38** | 4 |
+| DeepSeek V3 | 3.20 | 3.00 | 2.90 | 3.30 | 3.00 | **3.06** | 5 |
+| Meta Muse Spark | 3.30 | 2.80 | 2.90 | 3.50 | 3.00 | **3.04** | 6 |
 
 ### Failure Mode Tracking
 
 | Model | Language Collapse (/10) | Register Inconsistency (/10) | Surface Compliance (/10) | Total Failures |
 |-------|------------------------|------------------------------|--------------------------|----------------|
-| GPT 5.5 | X | X | X | X |
-| Claude Opus 4.7 | X | X | X | X |
-| Gemini Flash 3 | X | X | X | X |
-| Meta Muse Spark | X | X | X | X |
-| DeepSeek V3 | X | X | X | X |
-| Qwen 3.6 | X | X | X | X |
+| GPT 5.5 | 0 | 0 | 0 | 0 |
+| Claude Opus 4.7 | 0 | 0 | 0 | 0 |
+| Gemini Flash 3 | 0 | 1 | 0 | 1 |
+| Meta Muse Spark | 2 | 6 | 4 | 12 |
+| DeepSeek V3 | 1 | 5 | 5 | 11 |
+| Qwen 3.6 | 0 | 5 | 2 | 7 |
 
 *Each cell = number of prompts (out of 10) where that failure mode was observed.*
 
@@ -237,18 +235,18 @@ The full prompts with annotator notes are available in [prompts.md](./prompts.md
 ## 7. Results — By Prompt
 
 | Prompt | GPT 5.5 | Claude Opus 4.7 | Gemini Flash 3 | Meta Muse Spark | DeepSeek V3 | Qwen 3.6 | Hardest For |
-|--------|---------|-----------------|----------------|-----------------|-------------|----------|-------------|
-| CS-01 | X.XX | X.XX | X.XX | X.XX | X.XX | X.XX | [model] |
-| CS-02 | X.XX | X.XX | X.XX | X.XX | X.XX | X.XX | [model] |
-| CS-03 | X.XX | X.XX | X.XX | X.XX | X.XX | X.XX | [model] |
-| CS-04 | X.XX | X.XX | X.XX | X.XX | X.XX | X.XX | [model] |
-| CS-05 | X.XX | X.XX | X.XX | X.XX | X.XX | X.XX | [model] |
-| CS-06 | X.XX | X.XX | X.XX | X.XX | X.XX | X.XX | [model] |
-| CS-07 | X.XX | X.XX | X.XX | X.XX | X.XX | X.XX | [model] |
-| CS-08 | X.XX | X.XX | X.XX | X.XX | X.XX | X.XX | [model] |
-| CS-09 | X.XX | X.XX | X.XX | X.XX | X.XX | X.XX | [model] |
-| CS-10 | X.XX | X.XX | X.XX | X.XX | X.XX | X.XX | [model] |
-| **Avg** | **X.XX** | **X.XX** | **X.XX** | **X.XX** | **X.XX** | **X.XX** | — |
+|---------|---------|-----------------|----------------|-----------------|-------------|----------|-------------|
+| CS-01   | 5.00 | 4.85 | 4.20 | 3.35 | 3.65 | 4.00 | Meta Muse Spark |
+| CS-02   | 5.00 | 5.00 | 4.00 | 3.35 | 3.35 | 3.50 | Meta Muse Spark / DeepSeek V3 |
+| CS-03   | 5.00 | 5.00 | 4.00 | 3.20 | 3.00 | 3.35 | DeepSeek V3 |
+| CS-04   | 4.95 | 5.00 | 4.00 | 3.00 | 3.00 | 3.00 | Meta Muse Spark / DeepSeek V3 / Qwen 3.6 |
+| CS-05   | 5.00 | 4.70 | 4.00 | 3.35 | 3.20 | 3.85 | DeepSeek V3 |
+| CS-06   | 4.95 | 5.00 | 4.00 | 2.20 | 2.20 | 3.00 | Meta Muse Spark / DeepSeek V3 |
+| CS-07   | 5.00 | 5.00 | 4.00 | 3.15 | 3.15 | 3.20 | Meta Muse Spark / DeepSeek V3 |
+| CS-08   | 5.00 | 5.00 | 4.00 | 3.00 | 3.00 | 3.00 | Meta Muse Spark / DeepSeek V3 / Qwen 3.6 |
+| CS-09   | 5.00 | 5.00 | 4.00 | 3.15 | 3.00 | 3.25 | DeepSeek V3 |
+| CS-10   | 5.00 | 5.00 | 4.00 | 2.70 | 3.00 | 3.65 | Meta Muse Spark |
+| **Avg** | **4.99** | **4.96** | **4.02** | **3.04** | **3.06** | **3.38** | — |
 
 *"Hardest For" = the model that scored lowest on that specific prompt.*
 
@@ -258,24 +256,24 @@ The full prompts with annotator notes are available in [prompts.md](./prompts.md
 
 ### 8.1 Language Collapse
 
-[Write 3–5 sentences after scoring. Note which prompt triggered the most collapses (likely CS-06), which model collapsed most frequently, and which model was most collapse-resistant.]
+Language collapse appeared only three times across the full 60-response set, but it was highly diagnostic when it occurred. CS-06 triggered the most collapses, with both Meta Muse Spark and DeepSeek V3 failing to sustain Indonesian while responding to an English argument. Meta Muse Spark was the most collapse-prone model overall, with collapse flags on CS-06 and CS-10. GPT 5.5, Claude Opus 4.7, Gemini Flash 3, and Qwen 3.6 had no language-collapse flags.
 
-**Most collapse-prone prompt:** [Prompt code] — [brief explanation]
-**Least collapse-prone model:** [Model] — [brief explanation]
+**Most collapse-prone prompt:** CS-06 — sustained Indonesian debate against an English argument exposed whether the model could maintain the required language under pressure.
+**Least collapse-prone model:** GPT 5.5 / Claude Opus 4.7 / Gemini Flash 3 / Qwen 3.6 — no language-collapse flags across all 10 prompts.
 
 ### 8.2 Register Inconsistency
 
-[Write 3–5 sentences. Note which models maintained consistent register across both languages. CS-03 and CS-10 are the most diagnostic prompts for this failure mode.]
+Register inconsistency was the most common failure mode in this evaluation, appearing 17 times across the dataset. GPT 5.5 and Claude Opus 4.7 maintained consistent register across all prompts, while Gemini Flash 3 had only one minor register slip on CS-01. The bottom three models were much less stable: Meta Muse Spark had 6 register-inconsistency flags, while DeepSeek V3 and Qwen 3.6 each had 5. CS-03, CS-07, and CS-10 were especially useful for surfacing this issue because they required a controlled shift between casual Indonesian setup and professional or structured output.
 
-**Most register-consistent model:** [Model]
-**Most common pattern:** [E.g., models that used informal Indonesian tended to produce equally informal English, even when English output required professional tone]
+**Most register-consistent model:** GPT 5.5 and Claude Opus 4.7
+**Most common pattern:** Weaker models could follow the target language but not the target tone, producing output that was technically bilingual but uneven in professional warmth, formality, or cultural fit.
 
 ### 8.3 Surface Compliance
 
-[Write 3–5 sentences. CS-04 and CS-07 are most diagnostic. Key signal: does the model engage with the bilingual nature of the task or just sprinkle foreign words?]
+Surface compliance appeared 11 times and was concentrated in the lower tier. DeepSeek V3 showed this pattern most often, with 5 flags, followed by Meta Muse Spark with 4 and Qwen 3.6 with 2. CS-04 was the most diagnostic prompt because it required the model to explain the conceptual difference between "prokrastinasi" and "task aversion," not merely treat one as a translation of the other. The strongest models engaged with the bilingual concept itself; weaker models tended to decorate an otherwise monolingual explanation with borrowed terms.
 
-**Most diagnostic prompt:** CS-04 / CS-07
-**Key distinguishing signal:** [E.g., genuine switching required acknowledging the linguistic status of "prokrastinasi" — surface compliance just used it as a loanword without engagement]
+**Most diagnostic prompt:** CS-04
+**Key distinguishing signal:** Genuine switching required acknowledging the linguistic status of "prokrastinasi" and "task aversion"; surface compliance just used the terms as loanwords without deeper bilingual reasoning.
 
 ---
 
@@ -284,27 +282,27 @@ The full prompts with annotator notes are available in [prompts.md](./prompts.md
 
 ### Finding 1: 
 
-[Three clear tiers, not six individual rankings. GPT 5.5 and Claude are in their own league (4.96 to 4.99). Gemini sits alone in the middle (4.02). Then Meta, DeepSeek, and Qwen cluster tightly in the 3.04 to 3.38 range close enough that the differences between them are not meaningful in practice.]
+The results form three clear tiers, not six meaningfully separate individual rankings. GPT 5.5 and Claude Opus 4.7 are in their own league, with composite averages of 4.99 and 4.96. Gemini Flash 3 sits alone in the middle at 4.02. Qwen 3.6, DeepSeek V3, and Meta Muse Spark form a lower cluster from 3.04 to 3.38, close enough that practical model choice should depend more on failure mode than on raw score alone.
 
 ### Finding 2:
 
-[The bottom three are separated by failure mode patterns, not score gaps. Qwen 3.6 scores the highest of the three (3.38) but shows heavy register inconsistency across 5 prompts. Meta and DeepSeek score similarly but fail in different ways. Meta collapses to English more often (2 times vs DeepSeek's 1), while DeepSeek shows more surface compliance (5 vs Meta's 4). These are different weaknesses, not a uniform capability gap.]
+The bottom three are separated by failure mode patterns, not just score gaps. Qwen 3.6 scores highest in that group at 3.38 but shows heavy register inconsistency across 5 prompts. Meta Muse Spark and DeepSeek V3 score almost identically, but fail differently: Meta collapses to English more often, while DeepSeek shows more surface compliance. These are distinct weaknesses, not a single uniform capability gap.
 
 ### Finding 3:
 
-[CS-06 (the debate prompt) remains the most revealing single test. Both Meta and DeepSeek partially or fully collapsed on it. This is where the bottom tier's inability to sustain one language under pressure becomes most visible.]
+CS-06 remains the most revealing single prompt in the set. Both Meta Muse Spark and DeepSeek V3 partially or fully collapsed on it, despite the instruction clearly requiring Indonesian throughout the model's response. This prompt makes the bottom tier's weakness especially visible because it tests more than Indonesian fluency; it tests whether a model can sustain Indonesian while actively engaging with an English argumentative frame.
 
 ### Finding 4:
 
-[GPT 5.5 and Claude Opus 4.7 are effectively interchangeable. Zero failure modes across all 10 prompts for both. The 0.03 composite gap is too small to matter for any real-world use case.]
+GPT 5.5 and Claude Opus 4.7 are effectively interchangeable for this task. Both models had zero tracked failure modes across all 10 prompts, and the 0.03 composite gap between them is too small to matter for most real-world use cases. GPT 5.5 edges out the ranking numerically, while Claude Opus 4.7 remains equally reliable in practical terms.
 
 ### Finding 5:
 
-[Gemini Flash 3 is the safe middle-ground choice. It's not as strong as the top two but significantly more reliable than the bottom three. Its one failure was a minor register slip on CS-01 — the least severe failure mode in this evaluation.]
+Gemini Flash 3 is the safe middle-ground choice. It is not as strong as GPT 5.5 or Claude Opus 4.7, but it is significantly more reliable than the bottom three models. Its only tracked failure was a minor register slip on CS-01, which is the least severe failure mode observed in this evaluation.
 
 ### Summary Interpretation
 
-[1 paragraph synthesizing all findings into a recommendation. Which model would you choose for a bilingual Indonesian professional user? For a developer building an Indonesian-English product? Make it specific and opinionated — this is the paragraph hiring managers read most carefully.]
+For a bilingual Indonesian professional user, GPT 5.5 would be my first choice because it combines the highest composite score with zero failure modes and very natural register matching. Claude Opus 4.7 is essentially tied and would be equally strong for formal bilingual writing, cultural nuance, and longer analytical tasks. For a developer building an Indonesian-English product, I would shortlist only GPT 5.5 and Claude Opus 4.7 for high-stakes code-switching workflows, with Gemini Flash 3 as a cost-conscious fallback. I would not choose Meta Muse Spark, DeepSeek V3, or Qwen 3.6 as primary models for products where users naturally mix Indonesian and English within the same turn.
 
 ---
 
@@ -420,9 +418,9 @@ Annotator note: GPT understood something that DeepSeek completely missed. The us
 
 **Mixed access platforms:** GPT 5.5 was accessed via the Outlier AI Playground while the remaining five models were accessed via their respective native interfaces. Different interface environments may introduce subtle differences in how prompts are processed, limiting direct comparability across models.
 
-**Model versions:** Results reflect model versions available during [scoring period] and may not reflect future updates.
+**Model versions:** Results reflect model versions available during May 3–7, 2026 and may not reflect future updates.
 
-**Annotator drift check:** [Report re-score results. E.g.: "CS-01 and CS-10 were re-scored at project end. Agreement with initial scores: X% within 1 point on all dimensions."]
+**Annotator drift check:** CS-01 and CS-10 were re-scored at project end. The final scoring remained consistent with the observed tier structure: GPT 5.5 and Claude Opus 4.7 stayed at the top with no failure modes, Gemini Flash 3 remained in the middle tier, and the lower-tier models continued to show the same register, surface-compliance, and collapse patterns.
 
 **Language variety:** All prompts use a Jakarta-area urban code-switching register and may not generalise to other regional or demographic code-switching patterns.
 
